@@ -7,6 +7,8 @@ services:
     buildCommand: npm install
     startCommand: npm start
     envVars:
+      - key: NODE_VERSION       # better-sqlite3 needs Node 20, not 24
+        value: "20.18.0"
       - key: API_KEY            # Render generates a strong secret — copy it into the dashboard
         generateValue: true
       - key: ALLOWED_ORIGINS    # blank = allow any origin (fine for internal use)
