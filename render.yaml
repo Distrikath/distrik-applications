@@ -1,0 +1,13 @@
+# Render Blueprint — Distrik Applications API
+services:
+  - type: web
+    name: distrik-applications-api
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: API_KEY            # Render generates a strong secret — copy it into the dashboard
+        generateValue: true
+      - key: ALLOWED_ORIGINS    # blank = allow any origin (fine for internal use)
+        value: ""
